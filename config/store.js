@@ -1,6 +1,6 @@
 // config used by store client side only
 module.exports = {
 	// store UI language
-	language: 'th',
-	ajaxBaseUrl: 'http://localhost:3001/ajax'
+	language: 'zh_CN',
+	ajaxBaseUrl: 'http://localhost:5001/ajax'
 };

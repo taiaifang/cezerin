@@ -39,6 +39,7 @@ const ItemPrice = ({ product, settings }) => {
 		return (
 			<div className="product-price" style={priceStyle}>
 				<FormattedCurrency settings={settings} number={product.price} />
+				（约¥{product.price / 50000}万元）
 			</div>
 		);
 	}

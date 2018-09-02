@@ -13,6 +13,7 @@ const NewAndOldPrices = ({ newPrice, oldPrice, settings }) => (
 		<del className="product-old-price">
 			<FormattedCurrency settings={settings} number={oldPrice} />
 		</del>
+		
 		<span className="product-discount-precentage">
 			{Math.ceil((oldPrice - newPrice) / oldPrice * 100)}% OFF
 		</span>
@@ -59,6 +60,7 @@ const Price = ({ product, variant, isAllOptionsSelected, settings }) => {
 		return (
 			<div className="product-price" style={priceStyle}>
 				<FormattedCurrency settings={settings} number={price} />
+				（约¥{price / 50000}万元）
 			</div>
 		);
 	}

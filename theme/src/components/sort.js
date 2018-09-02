@@ -1,7 +1,7 @@
 import React from 'react';
 import { themeSettings, text } from '../lib/settings';
 
-const Sort = ({ defaultSort, currentSort, setSort }) => {
+const Sort = ({ currentSort, setSort }) => {
 	return (
 		<div className="columns is-mobile sort">
 			<div className="column is-4 sort-title">{text.sort}:</div>
@@ -13,7 +13,6 @@ const Sort = ({ defaultSort, currentSort, setSort }) => {
 						}}
 						value={currentSort}
 					>
-						<option value={defaultSort}>{text.sortFavorite}</option>
 						<option value={themeSettings.sortNewest}>{text.sortNewest}</option>
 						<option value={themeSettings.sortPriceLow}>
 							{text.sortPriceLow}

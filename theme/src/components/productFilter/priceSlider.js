@@ -54,9 +54,11 @@ export default class PriceSlider extends React.Component {
 				<div className="columns is-mobile is-gapless price-filter-values">
 					<div className="column has-text-left">
 						{helper.formatCurrency(this.state.minValue, settings)}
+						（约¥{this.state.minValue / 50000}万元）
 					</div>
 					<div className="column has-text-right">
 						{helper.formatCurrency(this.state.maxValue, settings)}
+						（约¥{this.state.maxValue / 50000}万元）
 					</div>
 				</div>
 			</div>
