@@ -108,7 +108,6 @@ const CategoryContainer = props => {
 								<div className="column" />
 								<div className="column is-5">
 									<Sort
-										defaultSort={settings.default_product_sorting}
 										currentSort={productFilter.sort}
 										setSort={setSort}
 									/>

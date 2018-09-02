@@ -142,47 +142,21 @@ export default class ProductDetails extends React.Component {
 				<Fragment>
 					<section className="section section-product">
 						<div className="container">
-							<div className="columns">
-								<div className="column is-7">
-									{themeSettings.show_product_breadcrumbs && (
-										<Breadcrumbs product={product} categories={categories} />
-									)}
-									<Gallery images={product.images} />
+							<div className="column is-12">
+								{themeSettings.show_product_breadcrumbs && (
+									<Breadcrumbs product={product} categories={categories} />
+								)}
+								<div className="content">
+									<Tags tags={product.tags} />
+									<h1 className="title is-4 product-name">{product.name}</h1>
+									<Price
+										product={product}
+										variant={selectedVariant}
+										isAllOptionsSelected={isAllOptionsSelected}
+										settings={settings}
+									/>
 								</div>
-								<div className="column is-5">
-									<div className="content">
-										<Tags tags={product.tags} />
-										<h1 className="title is-4 product-name">{product.name}</h1>
-										<Price
-											product={product}
-											variant={selectedVariant}
-											isAllOptionsSelected={isAllOptionsSelected}
-											settings={settings}
-										/>
-
-										{themeSettings.show_discount_countdown &&
-											product.on_sale === true && (
-												<DiscountCountdown product={product} />
-											)}
-
-										<Options
-											options={product.options}
-											onChange={this.onOptionChange}
-										/>
-										<Quantity
-											maxQuantity={maxQuantity}
-											onChange={this.setQuantity}
-										/>
-										<div className="button-addtocart">
-											<AddToCartButton
-												product={product}
-												variant={selectedVariant}
-												addCartItem={this.addToCart}
-												isAllOptionsSelected={isAllOptionsSelected}
-											/>
-										</div>
-									</div>
-								</div>
+								<Gallery images={product.images} />
 							</div>
 						</div>
 					</section>

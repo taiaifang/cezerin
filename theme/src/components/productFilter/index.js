@@ -58,7 +58,6 @@ export default class ProductFilter extends React.Component {
 						<div className={sidebarIsActive ? 'box sidebar' : ''}>
 							<div className="is-hidden-tablet" style={{ marginBottom: 30 }}>
 								<Sort
-									defaultSort={settings.default_product_sorting}
 									currentSort={productFilter.sort}
 									setSort={this.props.setSort}
 								/>
