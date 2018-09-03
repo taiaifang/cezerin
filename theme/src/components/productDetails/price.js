@@ -56,12 +56,16 @@ const Price = ({ product, variant, isAllOptionsSelected, settings }) => {
 				oldPrice={oldPrice}
 			/>
 		);
-	} else {
+	} else if (price > 0) {
 		return (
 			<div className="product-price" style={priceStyle}>
 				<FormattedCurrency settings={settings} number={price} />
 				（约¥{price / 50000}万元）
 			</div>
+		);
+	} else {
+		return (
+			<div></div>
 		);
 	}
 };
