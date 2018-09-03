@@ -37,31 +37,37 @@ export default class PriceSlider extends React.Component {
 	render() {
 		const { minPrice, maxPrice, setPriceFromAndTo, settings } = this.props;
 
-		return (
-			<div className="price-filter">
-				<div className="attribute-title">{text.price}</div>
-				<Range
-					min={minPrice}
-					max={maxPrice}
-					value={[this.state.minValue, this.state.maxValue]}
-					disabled={maxPrice === 0}
-					className="price-filter-range"
-					onAfterChange={values => {
-						setPriceFromAndTo(...values);
-					}}
-					onChange={this.setValues}
-				/>
-				<div className="columns is-mobile is-gapless price-filter-values">
-					<div className="column has-text-left">
-						{helper.formatCurrency(this.state.minValue, settings)}
-						（约¥{this.state.minValue / 50000}万元）
-					</div>
-					<div className="column has-text-right">
-						{helper.formatCurrency(this.state.maxValue, settings)}
-						（约¥{this.state.maxValue / 50000}万元）
+		if (maxPrice > 0) {
+			return (
+				<div className="price-filter">
+					<div className="attribute-title">{text.price}</div>
+					<Range
+						min={minPrice}
+						max={maxPrice}
+						value={[this.state.minValue, this.state.maxValue]}
+						disabled={maxPrice === 0}
+						className="price-filter-range"
+						onAfterChange={values => {
+							setPriceFromAndTo(...values);
+						}}
+						onChange={this.setValues}
+					/>
+					<div className="columns is-mobile is-gapless price-filter-values">
+						<div className="column has-text-left">
+							{helper.formatCurrency(this.state.minValue, settings)}
+							（约¥{this.state.minValue / 50000}万元）
+						</div>
+						<div className="column has-text-right">
+							{helper.formatCurrency(this.state.maxValue, settings)}
+							（约¥{this.state.maxValue / 50000}万元）
+						</div>
 					</div>
 				</div>
-			</div>
-		);
+			);
+		} else {
+			return (
+				<div></div>
+			);
+		}
 	}
 }
